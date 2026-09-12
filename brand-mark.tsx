@@ -1,8 +1,10 @@
 import { cn } from "./utils.ts";
 
+const IMG = "https://raw.githubusercontent.com/aaditya37ocodex-pixel/CodeX-Viber/main";
+
 export function CxMark({ className }: { className?: string }) {
   return (
-    <img src="/codex-viber-original.jpg" alt="" className={cn("object-cover object-center", className)} aria-hidden="true" />
+    <img src={`${IMG}/codex-viber-original.jpg`} alt="" className={cn("object-cover object-center", className)} aria-hidden="true" />
   );
 }
 
@@ -16,7 +18,7 @@ export function Wordmark({ className }: { className?: string }) {
 
 export function FullLogo({ className }: { className?: string }) {
   return (
-    <img src="/codex-viber-original.jpg" alt="CodeX Viber — Build · Automate · Innovate" className={cn("object-contain", className)} />
+    <img src={`${IMG}/codex-viber-original.jpg`} alt="CodeX Viber — Build · Automate · Innovate" className={cn("object-contain", className)} />
   );
 }
 
