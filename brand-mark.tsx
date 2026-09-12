@@ -3,7 +3,7 @@ import { cn } from "./utils.ts";
 export function CxMark({ className }: { className?: string }) {
   return (
     <img
-      src="/codex-viber-original.jpg"
+      src="/codex-viber-original.svg"
       alt=""
       className={cn("object-cover object-center", className)}
       aria-hidden="true"
@@ -22,7 +22,7 @@ export function Wordmark({ className }: { className?: string }) {
 export function FullLogo({ className }: { className?: string }) {
   return (
     <img
-      src="/codex-viber-original.jpg"
+      src="/codex-viber-original.svg"
       alt="CodeX Viber — Build · Automate · Innovate"
       className={cn("object-contain", className)}
     />

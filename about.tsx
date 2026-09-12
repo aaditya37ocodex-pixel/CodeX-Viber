@@ -18,18 +18,11 @@ export function About() {
             behaves, and how it scales.
           </p>
         </Reveal>
-
         <Reveal delayMs={80}>
           <article className="rounded-2xl p-6 panel">
             <div className="flex items-center gap-4">
               <div className="flex size-16 items-center justify-center overflow-hidden rounded-2xl bg-bg">
-                <img
-                  src="/logo.jpg"
-                  alt="CodeX Viber logo"
-                  className="h-full w-full object-cover"
-                  width={128}
-                  height={128}
-                />
+                <img src="/logo.svg" alt="CodeX Viber logo" className="h-full w-full object-cover" width={128} height={128} />
               </div>
               <div>
                 <p className="text-lg font-medium">Aaditya</p>
@@ -43,9 +36,7 @@ export function About() {
             </p>
             <div className="mt-6 flex items-center gap-3 rounded-xl bg-bg/60 px-3 py-3 shadow-[0_0_0_1px_rgba(255,255,255,0.06)]">
               <CxMark className="h-8 w-10 shrink-0" />
-              <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-subtle">
-                Ideas → Code → Impact
-              </p>
+              <p className="font-mono text-[0.68rem] uppercase tracking-[0.16em] text-subtle">Ideas → Code → Impact</p>
             </div>
           </article>
         </Reveal>
