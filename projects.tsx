@@ -4,13 +4,15 @@ import { buttonVariants } from "./button.tsx";
 import { cn } from "./utils.ts";
 import { similarProjectMessage, whatsappUrl } from "./whatsapp.ts";
 
+const IMG = "https://raw.githubusercontent.com/aaditya37ocodex-pixel/CodeX-Viber/main";
+
 const PROJECTS = [
-  { id: "web", title: "Business Websites", blurb: "Fast, conversion-ready sites with a premium visual system.", image: "/project-web.jpg", alt: "Laptop showing a dark modern business website", tags: ["Web", "Responsive", "SEO"], featured: true },
-  { id: "ai", title: "AI Agent Interfaces", blurb: "Chat surfaces and assistants that actually do the work.", image: "/project-ai.jpg", alt: "Abstract AI interface panels with neural connections", tags: ["Agents", "Automation"], featured: false },
-  { id: "deck", title: "Presentation Designs", blurb: "Decks that make a complex idea land in one sitting.", image: "/contact.jpg", alt: "Large conference display with a geometric presentation layout", tags: ["Pitch", "Visual system"], featured: false },
-  { id: "robot", title: "Robotics Projects", blurb: "From concept and control logic to smart mechanical systems.", image: "/lab-arm.jpg", alt: "Industrial robotic arm in a dark research lab", tags: ["Control", "Automation"], featured: false },
-  { id: "editor", title: "Creative Editor Studio", blurb: "Visual content that gives every digital idea a stronger identity.", image: "/contact.jpg", alt: "Creative presentation and visual design workspace", tags: ["Video", "Branding", "Social"], featured: false },
-  { id: "code", title: "Coding & Software Projects", blurb: "Web apps and custom software built around a real workflow.", image: "/project-code.jpg", alt: "Ultrawide monitor with a dark code editor", tags: ["Web apps", "Custom"], featured: false },
+  { id: "web", title: "Business Websites", blurb: "Fast, conversion-ready sites with a premium visual system.", image: `${IMG}/project-web.jpg`, alt: "Laptop showing a dark modern business website", tags: ["Web", "Responsive", "SEO"], featured: true },
+  { id: "ai", title: "AI Agent Interfaces", blurb: "Chat surfaces and assistants that actually do the work.", image: `${IMG}/project-ai.jpg`, alt: "Abstract AI interface panels with neural connections", tags: ["Agents", "Automation"], featured: false },
+  { id: "deck", title: "Presentation Designs", blurb: "Decks that make a complex idea land in one sitting.", image: `${IMG}/contact.jpg`, alt: "Large conference display with a geometric presentation layout", tags: ["Pitch", "Visual system"], featured: false },
+  { id: "robot", title: "Robotics Projects", blurb: "From concept and control logic to smart mechanical systems.", image: `${IMG}/lab-arm.jpg`, alt: "Industrial robotic arm in a dark research lab", tags: ["Control", "Automation"], featured: false },
+  { id: "editor", title: "Creative Editor Studio", blurb: "Visual content that gives every digital idea a stronger identity.", image: `${IMG}/contact.jpg`, alt: "Creative presentation and visual design workspace", tags: ["Video", "Branding", "Social"], featured: false },
+  { id: "code", title: "Coding & Software Projects", blurb: "Web apps and custom software built around a real workflow.", image: `${IMG}/project-code.jpg`, alt: "Ultrawide monitor with a dark code editor", tags: ["Web apps", "Custom"], featured: false },
 ] as const;
 
 export function Projects() {
