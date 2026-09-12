@@ -3,6 +3,8 @@ import { Reveal } from "./reveal.tsx";
 import { buttonVariants } from "./button.tsx";
 import { cn } from "./utils.ts";
 
+const IMG = "https://raw.githubusercontent.com/aaditya37ocodex-pixel/CodeX-Viber/main";
+
 const HIGHLIGHTS = [
   { icon: Settings2, label: "Automation" },
   { icon: Cpu, label: "Robotics Programming" },
@@ -50,7 +52,7 @@ export function RoboticsLab() {
       <div className="mx-auto max-w-6xl px-5">
         <div className="overflow-hidden rounded-[1.75rem] panel lg:grid lg:grid-cols-2">
           <div className="relative min-h-80">
-            <img src="/lab-arm.jpg" alt="Industrial robotic arm in a dark laboratory" className="absolute inset-0 h-full w-full object-cover" width={960} height={720} />
+            <img src={`${IMG}/lab-arm.jpg`} alt="Industrial robotic arm in a dark laboratory" className="absolute inset-0 h-full w-full object-cover" width={960} height={720} />
             <div className="absolute inset-0 bg-linear-to-t from-bg via-bg/20 to-bg/30" />
             <span className="absolute left-5 top-5 h-8 w-8 border-l-2 border-t-2 border-accent/70" />
             <span className="absolute right-5 top-5 h-8 w-8 border-r-2 border-t-2 border-accent/70" />
