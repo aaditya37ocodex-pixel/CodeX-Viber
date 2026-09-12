@@ -1,0 +1,126 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Outfit", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --color-bg: #06080f;
+  --color-bg-elevated: #0b1020;
+  --color-surface: #10182c;
+  --color-surface-2: #161f38;
+  --color-fg: #f3f6fb;
+  --color-muted: #93a0b8;
+  --color-subtle: #6d7a94;
+  --color-accent: #3b9eff;
+  --color-accent-bright: #6bb6ff;
+  --color-accent-2: #8b6cff;
+  --color-cyan: #21d4fd;
+  --color-whatsapp: #25d366;
+  --color-whatsapp-bright: #45e07e;
+  --color-whatsapp-fg: #052010;
+  --color-ring: #3b9eff;
+  --color-border: #1c2744;
+  --color-danger: #f87171;
+
+  --radius-xs: 0.25rem;
+  --radius-sm: 0.5rem;
+  --radius-md: 0.75rem;
+  --radius-lg: 1rem;
+  --radius-xl: 1.5rem;
+  --radius-2xl: 2rem;
+  --radius-3xl: 1.75rem;
+
+  --shadow-border: 0 0 0 1px rgba(255, 255, 255, 0.08);
+  --shadow-border-hover: 0 0 0 1px rgba(255, 255, 255, 0.16);
+  --shadow-glow: 0 0 48px -12px color-mix(in oklab, var(--color-accent) 42%, transparent);
+  --shadow-glow-2: 0 0 48px -12px color-mix(in oklab, var(--color-accent-2) 40%, transparent);
+}
+
+@layer base {
+  html {
+    color-scheme: dark;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: var(--color-bg);
+    color: var(--color-fg);
+  }
+  body {
+    min-height: 100svh;
+    background: var(--color-bg);
+    color: var(--color-fg);
+    font-family: var(--font-sans);
+    line-height: 1.55;
+  }
+  h1, h2, h3 { text-wrap: balance; letter-spacing: -0.03em; line-height: 1.12; }
+  p { text-wrap: pretty; }
+  button:not(:disabled), [role="button"]:not(:disabled) { cursor: pointer; }
+  ::selection { background: color-mix(in oklab, var(--color-accent) 38%, transparent); color: var(--color-fg); }
+  section[id] { scroll-margin-top: 5.5rem; }
+  img { outline: 1px solid rgba(255, 255, 255, 0.1); outline-offset: -1px; }
+}
+
+@layer components {
+  .skip-link { position: absolute; left: 1rem; top: -3rem; z-index: 80; border-radius: 0.75rem; background: var(--color-fg); color: var(--color-bg); padding: 0.6rem 0.9rem; font-size: 0.875rem; font-weight: 600; }
+  .skip-link:focus { top: 1rem; }
+  .eyebrow { display: inline-flex; align-items: center; gap: 0.55rem; color: var(--color-muted); font-family: var(--font-mono); font-size: 0.72rem; font-weight: 500; letter-spacing: 0.16em; text-transform: uppercase; }
+  .text-gradient { background: linear-gradient(100deg, #c4b5ff 0%, #8b6cff 42%, #3b9eff 100%); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .glass { background: color-mix(in oklab, var(--color-surface) 72%, transparent); backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px); box-shadow: var(--shadow-border); }
+  .nav-link { position: relative; transition: color 160ms ease, background-color 160ms ease; }
+  .nav-link:hover { color: var(--color-fg); background: color-mix(in oklab, var(--color-fg) 5%, transparent); }
+  .nav-link::after { content: ""; position: absolute; left: 0.75rem; right: 0.75rem; bottom: 0.3rem; height: 1px; transform: scaleX(0); transform-origin: center; background: linear-gradient(90deg, var(--color-accent-2), var(--color-accent), var(--color-cyan)); transition: transform 160ms ease; }
+  .nav-link:hover::after { transform: scaleX(1); }
+  .glass-strong { background: color-mix(in oklab, var(--color-bg-elevated) 78%, transparent); backdrop-filter: blur(22px); -webkit-backdrop-filter: blur(22px); box-shadow: var(--shadow-border); }
+  .hero-core { background-image: radial-gradient(circle at 50% 20%, rgba(59,158,255,0.12), transparent 42%); }
+  .service-card { border: 1px solid color-mix(in oklab, var(--color-border) 85%, transparent); transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease; }
+  .service-card:hover { transform: translateY(-5px); border-color: color-mix(in oklab, var(--color-accent) 40%, var(--color-border)); box-shadow: 0 20px 60px -30px rgba(33, 212, 253, 0.45); }
+  .service-glow { position: absolute; width: 9rem; height: 9rem; right: -5rem; top: -5rem; border-radius: 9999px; background: color-mix(in oklab, var(--color-accent-2) 22%, transparent); filter: blur(38px); transition: transform 250ms ease; }
+  .service-card:hover .service-glow { transform: scale(1.5); }
+  .contact-link { display: flex; align-items: center; gap: 0.9rem; border: 1px solid var(--color-border); border-radius: 0.9rem; background: color-mix(in oklab, var(--color-bg) 78%, transparent); padding: 0.9rem 1rem; transition: border-color 160ms ease, transform 160ms ease, background-color 160ms ease; }
+  .contact-link:hover { transform: translateY(-1px); border-color: color-mix(in oklab, var(--color-accent) 42%, var(--color-border)); background: color-mix(in oklab, var(--color-accent) 5%, var(--color-bg)); }
+  .panel { background: linear-gradient(180deg, color-mix(in oklab, var(--color-surface) 88%, white 4%), var(--color-bg-elevated)); box-shadow: var(--shadow-border); }
+  .section-kicker { margin-bottom: 0.85rem; }
+  .reveal { opacity: 0; transform: translateY(16px); filter: blur(4px); transition: opacity 500ms cubic-bezier(0.22, 1, 0.36, 1), transform 500ms cubic-bezier(0.22, 1, 0.36, 1), filter 500ms cubic-bezier(0.22, 1, 0.36, 1); }
+  .reveal-in { opacity: 1; transform: none; filter: none; }
+  .grid-floor { background-image: linear-gradient(rgba(59, 158, 255, 0.055) 1px, transparent 1px), linear-gradient(90deg, rgba(59, 158, 255, 0.055) 1px, transparent 1px); background-size: 56px 56px; mask-image: radial-gradient(ellipse at center, black 30%, transparent 78%); }
+  .hero-orb { position: absolute; border-radius: 9999px; filter: blur(48px); pointer-events: none; }
+  .orbit { position: absolute; inset: 0; border-radius: 9999px; border: 1px solid color-mix(in oklab, var(--color-accent) 28%, transparent); animation: spin-slow 28s linear infinite; }
+  .orbit-2 { inset: 10%; border-color: color-mix(in oklab, var(--color-accent-2) 34%, transparent); animation-duration: 20s; animation-direction: reverse; }
+  .orbit-3 { inset: 20%; border-style: dashed; border-color: color-mix(in oklab, var(--color-fg) 12%, transparent); animation-duration: 36s; }
+  .wa-pulse { animation: wa-pulse 2.4s ease-out infinite; }
+  .scan-line { background: linear-gradient(180deg, transparent, color-mix(in oklab, var(--color-accent) 35%, transparent), transparent); animation: scan 4.8s ease-in-out infinite; }
+}
+
+@keyframes spin-slow { to { transform: rotate(360deg); } }
+@keyframes wa-pulse {
+  0% { box-shadow: 0 0 0 0 color-mix(in oklab, var(--color-whatsapp) 55%, transparent); }
+  70% { box-shadow: 0 0 0 16px transparent; }
+  100% { box-shadow: 0 0 0 0 transparent; }
+}
+@keyframes scan {
+  0%, 100% { transform: translateY(-30%); opacity: 0; }
+  20% { opacity: 1; }
+  80% { opacity: 0.2; }
+  100% { transform: translateY(130%); opacity: 0; }
+}
+@keyframes arm-shoulder { 0%, 100% { transform: rotate(-16deg); } 50% { transform: rotate(18deg); } }
+@keyframes arm-elbow { 0%, 100% { transform: rotate(28deg); } 50% { transform: rotate(-8deg); } }
+@keyframes gripper { 0%, 100% { transform: rotate(-12deg); } 50% { transform: rotate(10deg); } }
+@keyframes float-y { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes icon-spin { to { transform: rotate(360deg); } }
+@keyframes dash-flow { to { stroke-dashoffset: -24; } }
+
+.arm-shoulder { transform-origin: 60px 118px; animation: arm-shoulder 6.5s ease-in-out infinite; }
+.arm-elbow { transform-origin: 118px 58px; animation: arm-elbow 6.5s ease-in-out infinite; }
+.arm-grip-l { transform-origin: 168px 28px; animation: gripper 2.8s ease-in-out infinite; }
+.arm-grip-r { transform-origin: 168px 28px; animation: gripper 2.8s ease-in-out infinite reverse; }
+.float-y { animation: float-y 6s ease-in-out infinite; }
+.icon-orbit { animation: icon-spin 10s linear infinite; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .reveal, .reveal-in { opacity: 1; transform: none; filter: none; transition: none; }
+  .orbit, .orbit-2, .orbit-3, .wa-pulse, .scan-line, .arm-shoulder, .arm-elbow, .arm-grip-l, .arm-grip-r, .float-y, .icon-orbit { animation: none; }
+}
