@@ -4,6 +4,8 @@ import { buttonVariants } from "./button.tsx";
 import { cn } from "./utils.ts";
 import { whatsappUrl } from "./whatsapp.ts";
 
+const IMG = "https://raw.githubusercontent.com/aaditya37ocodex-pixel/CodeX-Viber/main";
+
 const STACK = [
   { icon: Code2, label: "Coding" },
   { icon: Bot, label: "AI Agents" },
@@ -61,7 +63,7 @@ export function Hero() {
           </div>
           <div className="hero-core relative overflow-hidden rounded-[2rem] border border-white/10 bg-[#070b16] p-3 shadow-[0_30px_100px_-35px_rgba(59,158,255,0.65)]">
             <div className="relative overflow-hidden rounded-[1.45rem] border border-white/10">
-              <img src="/hero-arm.jpg" alt="Robotic arm inside a futuristic technology lab" className="h-[26rem] w-full object-cover sm:h-[31rem]" width={900} height={900} />
+              <img src={`${IMG}/hero-arm.jpg`} alt="Robotic arm inside a futuristic technology lab" className="h-[26rem] w-full object-cover sm:h-[31rem]" width={900} height={900} />
               <div className="absolute inset-0 bg-linear-to-t from-[#050812] via-[#050812]/30 to-[#050812]/5" />
               <div className="absolute inset-x-4 top-4 flex items-center justify-between">
                 <span className="glass rounded-full px-3 py-1.5 font-mono text-[0.62rem] uppercase tracking-[0.15em] text-accent-bright">Technology Core</span>
@@ -74,7 +76,7 @@ export function Hero() {
               </div>
               <div className="absolute bottom-4 left-4 right-4 rounded-2xl border border-white/10 bg-[#070b16]/80 p-4 backdrop-blur-xl sm:p-5">
                 <div className="flex items-center gap-3">
-                  <img src="/codex-viber-original.jpg" alt="CodeX Viber" className="h-12 w-16 rounded-lg object-cover" width={160} height={120} />
+                  <img src={`${IMG}/codex-viber-original.jpg`} alt="CodeX Viber" className="h-12 w-16 rounded-lg object-cover" width={160} height={120} />
                   <div className="min-w-0">
                     <p className="text-sm font-semibold">Ideas → Code → Impact</p>
                     <p className="mt-0.5 text-xs text-muted">AI · Web · Robotics · Creative</p>
